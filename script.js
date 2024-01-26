@@ -22,12 +22,13 @@ async function dataFetch(){
     });
 }
 
-
+const numMap = ["", "one","two","three","four","five","six","seven","eight","nine","ten"];
 
 const questionsText = document.querySelector(".question");
 const ctgBtn = document.querySelector(".ctgBtn")
 const answerBtn = document.querySelector(".answers");
 const nextBtn = document.querySelector(".nextBtn");
+const pageBtns = document.querySelector(".page-btns");
 
 let currentIndex = 0;
 let totalScore = 0;
@@ -67,12 +68,16 @@ function displayAns(e){
     const correctAns = questions[currentIndex].correctAnswer;
 
     console.log(selectedBtn.innerHTML)
+    let classVar = numMap[currentIndex+1];
+
    if(selectedBtn.innerHTML === correctAns){
        selectedBtn.style.background = "green";
+       document.querySelector(`.${classVar}`).style.background = "green";
        totalScore++;
     }
     else{
         selectedBtn.style.background = "red" 
+       document.querySelector(`.${classVar}`).style.background = "red";
     }
     
     Array.from(answerBtn.children).forEach(button =>{

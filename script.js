@@ -37,7 +37,9 @@ function showScore(){
     answerBtn.style.display = "none";
     questionsText.innerHTML =  `Your scored ${totalScore} out of ${questions.length}`
     nextBtn.innerHTML = "Reset Game";
-    nextBtn.addEventListener("click", main);
+    nextBtn.addEventListener("click", ()=>{
+        location.reload();
+    });
     
 }
 function showNextQuestion(){

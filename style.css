@@ -53,7 +53,7 @@ body{
     display: flex;
     flex-direction: column;
 }
-.top p{
+.top .question{
     margin-left: 20px;
     font-size: 16px;
 }
